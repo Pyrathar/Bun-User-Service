@@ -1,15 +1,23 @@
 import { expect, test, describe, beforeEach } from "bun:test";
 import * as userController from './../../controllers/userController'
+import { upsertOrg } from './../../controllers/orgController'
 
 beforeEach(async () => {
     await userController.deleteAllUsers()
   });
 
-describe("User Controller", () => {
+describe("User Controller", async() => {
 
+  let organization = {
+    name: "Capsule Corp"
+  }
+
+  const { id: organizationId } = await upsertOrg(organization)
+  
   let sampleUser = {
     name: 'Akira Toriyama',
-    email:"akira@nippon.com"
+    email:"akira@nippon.com",
+    organizationId
   }
 
   test("It creates a user", async () => {
