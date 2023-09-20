@@ -16,15 +16,13 @@ jobs:
 
     - name: Set up environment
       run: |
-        docker-compose up
+        docker-compose up -d
         curl -fsSL https://bun.sh/install | bash
 
     - name: Install dependencies
       run: |
-        # Commands to install necessary dependencies
-        # e.g., bun install (or equivalent)
+       bun install 
 
     - name: Run tests
       run: |
-        # Command to run tests using 'bun'
-        # e.g., bun test (or equivalent)
+        bun test
