@@ -11,7 +11,15 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  id             Int          @id @default(autoincrement())
+  email          String       @unique
+  name           String?
+  organizationId Int          @map("organization_id")
+  organization   Organization @relation(fields: [organizationId], references: [id])
+}
+
+model Organization {
+  id   Int    @id @default(autoincrement())
+  name String @unique
+  users User[]
 }
