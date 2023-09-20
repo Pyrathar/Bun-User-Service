@@ -25,6 +25,10 @@ jobs:
       run: |
         bun install 
 
+    - name: Setup prisma
+      run: |
+        bunx prisma migrate dev --name init
+
     - name: Run tests
       run: |
         bun test
