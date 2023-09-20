@@ -1,4 +1,3 @@
-import server from "bunrest";
 import routes from './routes';
 
 routes.router();
