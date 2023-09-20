@@ -25,9 +25,15 @@ const deleteUser = async (id: number): Promise<void> => {
     await prisma.user.delete({ where: { id } });
 };
 
+const deleteAllUsers = async (): Promise<void> => {
+    await prisma.user.deleteMany();
+};
+
+
 export {
     getAllUsers,
     getUserById,
     upsertUser,
-    deleteUser
+    deleteUser,
+    deleteAllUsers
 };
