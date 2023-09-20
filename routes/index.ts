@@ -1,6 +1,6 @@
 import server from "bunrest";
 import users from './users';
-import organizations from './organizations';
+import organizations from    './organizations';
 
 const routes = server();
 

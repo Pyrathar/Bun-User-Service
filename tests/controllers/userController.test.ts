@@ -13,7 +13,7 @@ describe("User Controller", async() => {
   }
 
   const { id: organizationId } = await upsertOrg(organization)
-  
+
   let sampleUser = {
     name: 'Akira Toriyama',
     email:"akira@nippon.com",
